@@ -17,7 +17,7 @@ public class MessageController {
     @MessageMapping("/chat.send")
     @SendTo("/topic/public")
     public Message send(@Payload final Message message) {
-        //String time = new SimpleDateFormat("HH:mm").format(new Date());
+        message.setTime(new SimpleDateFormat("HH:mm").format(new Date()));
         return message;
     }
 
@@ -26,6 +26,7 @@ public class MessageController {
     public Message newUser(@Payload final Message message
                             , SimpMessageHeaderAccessor headerAccessor) {
         headerAccessor.getSessionAttributes().put("username",message.getSender());
+        message.setTime(new SimpleDateFormat("HH:mm").format(new Date()));
         return message;
     }
 }

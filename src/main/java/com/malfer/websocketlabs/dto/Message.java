@@ -2,6 +2,7 @@ package com.malfer.websocketlabs.dto;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 @Builder
 public class Message {
@@ -16,5 +17,6 @@ public class Message {
     private String sender;
 
     @Getter
+    @Setter
     private String time;
 }
