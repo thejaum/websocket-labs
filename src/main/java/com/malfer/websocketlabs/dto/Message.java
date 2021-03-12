@@ -1,23 +1,20 @@
 package com.malfer.websocketlabs.dto;
 
+import lombok.Builder;
+import lombok.Getter;
+
+@Builder
 public class Message {
 
-    private String from;
-    private String text;
+    @Getter
+    private MessageType type;
 
-    public String getFrom() {
-        return from;
-    }
+    @Getter
+    private String content;
 
-    public void setFrom(String from) {
-        this.from = from;
-    }
+    @Getter
+    private String sender;
 
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
+    @Getter
+    private String time;
 }
