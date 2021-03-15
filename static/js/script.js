@@ -13,11 +13,7 @@ const connect = (event) => {
         const chatPage = document.querySelector('#chat-page')
         chatPage.classList.remove('hide')
 
-        /*const ws = new WebSocket('ws://localhost/chat-example');
-        ws.onopen = () => { onConnected, onError};*/
-
         const socket = new SockJS('http://localhost:8090/chat-example')
-        //const socket = new SockJS('/chat-example')
         stompClient = Stomp.over(socket)
         stompClient.connect({}, onConnected, onError)
     }
