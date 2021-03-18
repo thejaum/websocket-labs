@@ -15,6 +15,10 @@ public class WebSocketMessageConfig implements WebSocketMessageBrokerConfigurer 
         registry.addEndpoint("/chat-example")
                 .setAllowedOriginPatterns("*")
                 .withSockJS();
+        registry.addEndpoint("/solicitation")
+                .setAllowedOriginPatterns("*")
+                .withSockJS();
+
     }
 
     @Override
@@ -22,7 +26,5 @@ public class WebSocketMessageConfig implements WebSocketMessageBrokerConfigurer 
         registry.setApplicationDestinationPrefixes("/app");
         registry.enableSimpleBroker("/topic");
     }
-
-
 
 }
