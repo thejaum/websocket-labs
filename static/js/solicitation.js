@@ -53,6 +53,7 @@ const onMessageReceivedSolic = (payload) => {
 
 const getAvatar = (key,value) => {
     const container = document.createElement('div')
+    container.style = "text-align: center"        
         const spanKey = document.createElement('span')
         spanKey.className = 'card-span-solic'
         spanKey.textContent = key        
