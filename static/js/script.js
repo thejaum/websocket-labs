@@ -3,6 +3,7 @@
 let stompClient
 let username
 
+// Chat
 const connect = (event) => {
     username = document.querySelector('#username').value.trim()
 
@@ -52,7 +53,6 @@ const sendMessage = (event) => {
     }
     event.preventDefault();
 }
-
 
 const onMessageReceived = (payload) => {
     const message = JSON.parse(payload.body);
